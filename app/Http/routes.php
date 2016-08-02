@@ -11,11 +11,20 @@
 |
 */
 
+// apunta al controlador de la pagina principal
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+//login controlador
+Route::resource('login','LoginController');
 
+
+Route::resource('welcome','LoginController@index');
+/*
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+*/
+
+
