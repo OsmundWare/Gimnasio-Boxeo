@@ -13,25 +13,26 @@
                     <div class="carousel-inner">
                         <!-- Slide 1 -->
                         <div class="item active">
-                            {!! Html::image('img/eula/inicio.jpg',"SmartAdmin") !!}
+                            {!! Html::image('img/boxeo/boxeo_img1.jpg',"SmartAdmin") !!}
                             <div class="carousel-caption caption-right">
                             </div>
                         </div>
                         <!-- Slide 2 -->
                         <div class="item">
-                            {!! Html::image('img/eula/Udec.jpg',"SmartAdmin") !!}
+                            {!! Html::image('img/boxeo/boxeo_img3.jpg',"SmartAdmin") !!}
                             <div class="carousel-caption caption-left">
                             </div>
                         </div>
                         <!-- Slide 3 -->
                         <div class="item">
-                            <img src="img/eula/inicio.jpg" alt="">
+                            <img src="img/boxeo/boxeo_img5.jpg" alt="">
                         </div>
                     </div>
                     <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
                     <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                 <div class="well no-padding">
                     {!!Form::open(['route'=>'login.store', 'method'=>'POST','class'=>'smart-form client-form', 'id'=>'login-form', 'action'=>'']) !!}
@@ -41,31 +42,30 @@
                     </header>
 
                     <fieldset>
-
                         <section>
                             <label class="label">Nombre</label>
                             <label class="input"> <i class="icon-append fa fa-user"></i>
-                                {!! form::text('nombre_usuario',null,['class' => 'form-control']) !!}
+                                {!! form::text('nombre_usuario',null,['class' => 'form-control', 'placeholder'=>'Ingresa tu nombre']) !!}
                                 <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
                         </section>
 
                         <section>
-                            <label class="label">clave</label>
+                            <label class="label">Clave</label>
                             <label class="input"> <i class="icon-append fa fa-user"></i>
-                                {!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingresa tu contrase?a'])!!}
+                                {!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingresa tu clave'])!!}
                                 <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
                         </section>
-
 
                         <section>
                             <label class="checkbox">
                                 <input type="checkbox" name="remember" checked="">
-                                <i></i>Stay signed in</label>
+                                <i></i> Recordar clave</label>
                         </section>
                     </fieldset>
+
                     <footer>
                         <button type="submit" class="btn btn-primary">
-                            Sign in
+                            Ingresar
                         </button>
                     </footer>
                     {!! Form::close() !!}
