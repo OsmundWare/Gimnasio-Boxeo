@@ -17,8 +17,10 @@ Route::get('/', 'WelcomeController@index');
 //login controlador
 Route::resource('login','LoginController');
 
+Route::resource('logout','LoginController@logout');
 
-Route::resource('welcome','LoginController@index');
+
+Route::resource('welcome','WelcomeController@show');
 /*
 Route::controllers([
     'auth' => 'Auth\AuthController',
