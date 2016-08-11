@@ -116,8 +116,6 @@
 
 <!--================================================== -->
 
-<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -135,13 +133,87 @@
         <!-- CUSTOM NOTIFICATION  logout-->
 {!!  Html::script('js/notification/SmartNotification.min.js') !!}
 
+        <!-- JARVIS WIDGETS -->
+{!!  Html::script('js/smartwidgets/jarvis.widget.min.js') !!}
+
         <!-- MAIN APP JS FILE -->
 {!! Html::script('js/app.min.js') !!}
 
-
+        <!-- PAGE RELATED PLUGIN(S) -->
+{!! Html::script('js/plugin/jquery-form/jquery-form.min.js') !!}
 
 @yield('scripts')
 
+<script type="text/javascript">
+
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+    $(document).ready(function() {
+
+        pageSetUp();
+
+        var $checkoutForm = $('#checkout-form').validate({
+            // Rules for form validation
+            rules : {
+                fname : {
+                    required : true
+                },
+                lname : {
+                    required : true
+                },
+                email : {
+                    required : true,
+                    email : true
+                },
+                phone : {
+                    required : true
+                },
+                country : {
+                    required : true
+                },
+                city : {
+                    required : true
+                },
+                code : {
+                    required : true,
+                    digits : true
+                },
+                address : {
+                    required : true
+                },
+                name : {
+                    required : true
+                },
+                card : {
+                    required : true,
+                    creditcard : true
+                },
+                cvv : {
+                    required : true,
+                    digits : true
+                },
+                month : {
+                    required : true
+                },
+                year : {
+                    required : true,
+                    digits : true
+                }
+            },
+
+
+            // Do not change code below
+            errorPlacement : function(error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+
+
+
+
+    })
+
+</script>
 
 </body>
 

@@ -1,5 +1,4 @@
 @extends('inicio.navegador')
-
 @section('panel')
     <nav>
 
@@ -10,7 +9,7 @@
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">Usuario</span></a>
                 <ul>
-                    <li>
+                    <li class="active">
                         <a href="{!! URL::to('usuario') !!}">Ingresar Usuario</a>
                     </li>
                     <li>
@@ -67,53 +66,45 @@
         </ul>
     </nav>
 @endsection
-
+@section('Breadcrumb')
+    <ol class="breadcrumb">
+        <li>Inicio</li><li><a href="{!! URL::to('/usuario/index') !!}">Listado de Usuarios</a></li> <li>Ver Usuario</li>
+    </ol>
+@endsection
 @section('content')
-
     <section id="widget-grid" class="">
+        <!-- NEW COL START -->
+        <article class="col-sm-12 col-md-12 col-lg-12">
+            <!-- widget content -->
+            <div class="well well-sm">
+                <h1 class="text-primary">Usuario {!! $usuario->nombre_usuario.' '.$usuario->apellido_paterno_usuario.' '.$usuario->apellido_materno_usuario !!}</h1>
+                <div class="bs-example">
+                    <dl class="dl-horizontal">
+                        <h2 class="text-primary"><dt>Rut: </dt></h2>
+                        <h2><dd>{!! $usuario->rut_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Direccion: </dt></h2>
+                        <h2><dd>{!! $usuario->direccion_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Comuna: </dt></h2>
+                        <h2><dd>{!! $usuario->comuna_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Telefono: </dt></h2>
+                        <h2><dd>{!! $usuario->telefono_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Correo: </dt></h2>
+                        <h2><dd>{!! $usuario->correo_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Fecha de Nacimiento: </dt></h2>
+                        <h2><dd>{!! $usuario->fecha_nacimiento_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Genero: </dt></h2>
+                        <h2><dd>{!! $usuario->genero_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Certificado Medico: </dt></h2>
+                        <h2><dd>{!! $usuario->certificado_medico_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Imagen Perfil: </dt></h2>
+                        <h2><dd>{!! $usuario->imagen_perfil_usuario !!}</dd></h2>
+                        <h2 class="text-primary"><dt>Perfil: </dt></h2>
+                        <h2><dd>{!! $usuario->perfil_usuario !!}</dd></h2>
 
-        <!-- NEW WIDGET START -->
-        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-            <!-- Widget ID (each widget will need unique ID)-->
-            <div class="jarviswidget jarviswidget-color-white" id="wid-id-0" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
-
-                <header>
-                    <span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
-                    <h2>XML Generated</h2>
-
-                </header>
-
-                <!-- widget div-->
-                <div>
-
-                    <!-- widget edit box -->
-                    <div class="jarviswidget-editbox">
-                        <!-- This area used as dropdown edit box -->
-
-                    </div>
-                    <!-- end widget edit box -->
-
-                    <!-- widget content -->
-                    <div class="widget-body no-padding">
-                        <div id='capaMapa' style="width: 100%; height: 500px;"> </div><!-- dimensiones del mapa -->
-                    </div>
-                    <!-- end widget content -->
-
+                    </dl>
                 </div>
-                <!-- end widget div -->
-
             </div>
-            <!-- end widget -->
-
+            <!-- end widget content -->
         </article>
-        <!-- WIDGET END -->
-
     </section>
-    <!-- end widget grid -->
-
-@stop
-
-@section('scripts')
-
-@stop
+@endsection

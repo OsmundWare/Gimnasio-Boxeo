@@ -19,6 +19,20 @@ Route::resource('login','LoginController');
 
 Route::resource('logout','LoginController@logout');
 
+//controlador usuario
+Route::get('usuario','UsuarioController@create');
+Route::post('usuario','UsuarioController@store');
+Route::get('usuario/index','UsuarioController@index');
+Route::get('usuario/{id}/editar', 'UsuarioController@edit');
+Route::put('usuario/{id}', 'UsuarioController@update');
+Route::get('usuario/{id}', 'UsuarioController@show');
+Route::get('usuario/{id}/eliminar', 'UsuarioController@destroy');
+
+
+//controlador horario
+Route::get('horario','HorarioController@create');
+Route::post('horario','HorarioController@store');
+Route::get('horario/index','HorarioController@index');
 
 Route::resource('welcome','WelcomeController@show');
 /*

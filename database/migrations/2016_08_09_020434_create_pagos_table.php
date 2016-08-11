@@ -13,16 +13,16 @@ class CreatePagosTable extends Migration
     public function up()
     {
         Schema::create('pagos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario_id')->unsigned();
+            $table->increments('id_pago');
+            $table->integer('id_usuario')->unsigned();
             $table->integer('monto_pago');
             $table->integer('abono_pago');
             $table->date('fecha_pago');
             $table->enum('estado_pago',['cancelado','deuda']);
             $table->timestamps();
 
-            $table->foreign('usuario_id')
-                ->references('id')->on('usuarios')
+            $table->foreign('id_usuario')
+                ->references('id_usuario')->on('usuarios')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
         });
@@ -38,3 +38,4 @@ class CreatePagosTable extends Migration
         Schema::drop('pagos');
     }
 }
+
