@@ -35,7 +35,23 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            return redirect('/');
+
+            switch($this->auth->user()->rol)
+            {
+                case '1':
+                    return redirect()->to('administrador');
+                    break;
+                case '2':
+                    return redirect()->to('preparador');
+                    break;
+                case '3':
+                    return redirect()->to('boxeador');
+                    break;
+                default:
+                    return redirect()->to('login');
+                    break;
+
+            }
         }
 
         return $next($request);

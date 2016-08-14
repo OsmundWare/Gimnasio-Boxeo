@@ -22,9 +22,66 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">Rut</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								<input type="text" class="form-control" name="rut" value="{{ old('rut') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Nombre</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Apellido Paterno</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="apellido_paterno" value="{{ old('apellido_paterno') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Apellido Materno</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="apellido_materno" value="{{ old('apellido_materno') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Direccion</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="direccion" value="{{ old('direccion') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Comuna</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="comuna" value="{{ old('comuna') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Telefono</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="telefono" value="{{ old('telefono') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Rol</label>
+							<div class="col-md-6">
+
+								{!! Form::select('rol',
+
+            							['1'=>'Administrador','2'=>'Preparador','3'=>'Boxeador'],
+            							null,
+            							['class'=>'form-control floating-label ','placeholder'=>'Rol:','required']
+       								 ) !!}
+								@if($errors->has('rol'))
+									<p class="text-danger">{{$errors->first('rol')}}</p>
+								@endif
 							</div>
 						</div>
 
@@ -32,6 +89,32 @@
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Fecha Nacimiento</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Sexo</label>
+							<div class="col-md-6">
+								{!! Form::select('sexo',
+
+            							['hombre'=>'Hombre','mujer'=>'Mujer'],
+            							null,
+            							['class'=>'form-control floating-label ','placeholder'=>'Sexo:','required']
+       								 ) !!}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Certificado Medico</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="certificado_medico" value="{{ old('certificado_medico') }}">
 							</div>
 						</div>
 

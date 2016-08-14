@@ -35,25 +35,25 @@
 
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                 <div class="well no-padding">
-                    {!!Form::open(['route'=>'login.store', 'method'=>'POST','class'=>'smart-form client-form', 'id'=>'login-form', 'action'=>'']) !!}
+                    {!!Form::open(['url' => '/auth/login', 'method'=>'POST','class'=>'smart-form client-form', 'id'=>'login-form', 'action'=>'']) !!}
 
                     <header>
-                        Login
+                        Iniciar sesion
                     </header>
 
                     <fieldset>
                         <section>
-                            <label class="label">Nombre</label>
+                            <label class="label">E-mail</label>
                             <label class="input"> <i class="icon-append fa fa-user"></i>
-                                {!! form::text('nombre_usuario',null,['class' => 'form-control', 'placeholder'=>'Ingresa tu nombre']) !!}
-                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
+                                {!! form::text('email',null,['class' => 'form-control', 'placeholder'=>'Ingresa tu nombre']) !!}
+                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Por favor introduzca E-mail</b></label>
                         </section>
 
                         <section>
                             <label class="label">Clave</label>
                             <label class="input"> <i class="icon-append fa fa-user"></i>
                                 {!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingresa tu clave'])!!}
-                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
+                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Por favor introduzca clave</b></label>
                         </section>
 
                         <section>

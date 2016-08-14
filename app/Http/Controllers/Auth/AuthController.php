@@ -28,6 +28,9 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    protected $redirectPath = '/';
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -42,7 +45,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'nombre' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -57,8 +60,18 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'rut' => $data['rut'],
+            'nombre' => $data['nombre'],
+            'apellido_paterno' => $data['apellido_paterno'],
+            'apellido_materno' => $data['apellido_materno'],
+            'direccion' => $data['direccion'],
+            'comuna' => $data['comuna'],
+            'telefono' => $data['telefono'],
+            'rol'=>$data['rol'],
             'email' => $data['email'],
+            'fecha_nacimiento' => $data['fecha_nacimiento'],
+            'sexo' => $data['sexo'],
+            'certificado_medico' => $data['certificado_medico'],
             'password' => bcrypt($data['password']),
         ]);
     }

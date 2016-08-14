@@ -17,7 +17,7 @@
     {!! Html::style('css/smartadmin-skins.min.css',array('media'=>'screen')) !!}
     {!! Html::style('css/smartadmin-production.min.css',array('media'=>'screen')) !!}
 
-    <!-- GOOGLE FONT -->
+            <!-- GOOGLE FONT -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
     <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
@@ -46,7 +46,7 @@
 
         <!-- logout button -->
         <div id="logout" class="btn-header transparent pull-right">
-            <span> <a href="{!! URL::to('logout') !!}" title="Sign Out" data-action="userLogout" data-logout-msg="¿Está seguro que desea cerrar su sesión?"><i class="fa fa-sign-out"></i></a> </span>
+            <span> <a href="{!! URL::to('/auth/logout') !!}" title="Sign Out" data-action="userLogout" data-logout-msg="¿Está seguro que desea cerrar su sesión?"><i class="fa fa-sign-out"></i></a> </span>
         </div>
         <!-- end logout button -->
 
@@ -126,7 +126,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 
-        <!-- IMPORTANT: APP CONFIG -->
+<!-- IMPORTANT: APP CONFIG -->
 {!! Html::script('js/app.config.js') !!}
 
         <!-- BOOTSTRAP JS -->
