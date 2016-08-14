@@ -38,7 +38,7 @@
                     {!!Form::open(['url' => '/auth/login', 'method'=>'POST','class'=>'smart-form client-form', 'id'=>'login-form', 'action'=>'']) !!}
 
                     <header>
-                        Iniciar sesion
+                        Iniciar Sesion
                     </header>
 
                     <fieldset>
